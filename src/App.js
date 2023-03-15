@@ -8,6 +8,7 @@ import { paths } from './paths';
 import { SharedLayout } from './components/SharedLayout';
 
 function App() {
+
   return (
     <Routes>
       <Route path={paths.main} element={<SharedLayout />}>
