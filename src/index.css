@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Raleway:wght@700&family=Roboto:wght@400;500&display=swap');
+
 .body {
-  font-family: roboto;
   font-size: 13px;
   line-height: 1.4;
   color: #5e5e5e;
@@ -10,4 +11,9 @@
 .container {
   width: 1020px;
   margin: auto;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: roboto;
 }

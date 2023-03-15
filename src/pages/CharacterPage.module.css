@@ -1,0 +1,92 @@
+  @import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Raleway:wght@700&family=Roboto:wght@700&display=swap');
+
+  .btn {
+      font-family: 'Karla', roboto;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 21px;
+      text-transform: uppercase;
+      background: transparent;
+      outline: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      margin-top: 21px;
+      margin-left: 50px;
+      cursor: pointer;
+
+  }
+
+  .btn_img {
+      width: 24px;
+      margin-right: 8px;
+  }
+
+  .character_container {
+      max-width: 413px;
+      margin: auto;
+  }
+
+  .character_avatar {
+      border-radius: 50%;
+      width: 300px;
+      border: 5px solid #F2F2F7;
+      display: block;
+      margin: auto;
+  }
+
+  .character_title {
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 56px;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      text-align: center;
+  }
+
+  .character_info {
+      margin-top: 48px;
+      margin-bottom: 48px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      letter-spacing: 0.15px;
+
+      color: #8E8E93;
+  }
+
+  .character_info_list {
+      list-style: none;
+
+      display: flex;
+      flex-direction: column;
+      padding: 0px;
+  }
+
+  .character_info_listItem {
+      border-bottom: 1px solid #E5E5E5;
+  }
+
+  .character_info_title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.15px;
+      color: #081F32;
+
+  }
+
+  .character_info_desc {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.25px;
+      color: #6E798C;
+  }

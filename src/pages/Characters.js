@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { fetchCharacters } from "../chatactersAPI";
 import SearchBar from "../components/SearchBar";
+import styles from "./Characters.module.css";
 import CharacterCard from "../components/CharacterCard";
 
 const Characters = () => {
@@ -40,7 +41,7 @@ const Characters = () => {
             <SearchBar onSearch={onSubmit} />
             {error && <p>Oh crap!</p>}
             {loading && <h2>I'm trying, wait...</h2>}
-            {<ul>
+            {<ul className={styles.list}>
                 <CharacterCard characters={sortCharacters(characters)} />
             </ul>}
         </div >

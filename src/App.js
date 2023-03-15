@@ -10,7 +10,7 @@ import { SharedLayout } from './components/SharedLayout';
 function App() {
   return (
     <Routes>
-      <Route path={paths.main} element={<SharedLayout/>}>
+      <Route path={paths.main} element={<SharedLayout />}>
         <Route index element={<Main />} />
         <Route path={paths.characters} element={<Characters />} />
         <Route path={paths.characterPage} element={<CharacterPage />} />
