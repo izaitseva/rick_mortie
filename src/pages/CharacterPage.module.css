@@ -28,17 +28,9 @@
       left: 0;
   }
 
-  .btn:hover {
-      color: green;
-  }
-
   .btn_img {
       width: 24px;
       margin-right: 8px;
-  }
-
-  .btn_img:hover {
-      fill: green;
   }
 
   .character_avatar {
