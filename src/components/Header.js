@@ -2,65 +2,37 @@ import { NavLink } from "react-router-dom";
 import { paths } from "../paths";
 import styles from "./Header.module.css"
 import logo from "../images/logo.png"
-import { useEffect, useState } from "react";
-import jwt_decode from "jwt-decode";
+// import { useEffect, useState } from "react";
+// import jwt_decode from "jwt-decode";
+import GoogleLogin from "react-google-login";
+// import NotFound from "../pages/NotFound";
 
 const Header = () => {
 
-    const [user, setUser] = useState('');
-
-    function handleCallbackResponse(response) {
-        console.log("ID:" + response.credential);
-        var userObject = jwt_decode(response.credential);
-        console.log(userObject);
-        console.log(userObject.name);
-        setUser(userObject);
-        document.getElementById("signInDiv").hidden = true;
+    const handleFailure = (result) => {
+        alert(result)
     }
-
-    useEffect(() => {
-        /* global google */
-        google.accounts.id.initialize({
-            client_id: "959854331354-telh3suplfm57nlldk6r9u4stpj3chq5.apps.googleusercontent.com",
-            callback: handleCallbackResponse
-        })
-
-        google.accounts.id.renderButton(
-            document.getElementById("signInDiv"),
-            { theme: "outline", size: "large" }
-        )
-    }, []);
-
-    function handleSignOut(e) {
-        setUser({});
-        document.getElementById("signInDiv").hidden = false;
-    }
-
-    const onClick = (e) => {
-        handleSignOut(e)
+    const handleLogin = (googleData) => {
+        console.log(googleData)
     }
 
     return (
         <nav>
             <div>
-                <small>Hey, stranger!</small>
-                <div id="signInDiv"></div>
+                <GoogleLogin
+                    clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                    buttonText="Log in, stranger"
+                    onSuccess={handleLogin}
+                    onFailure={handleFailure}
+                    cookiePolicy={'sigle_host_origin'}
+                ></GoogleLogin>
             </div>
-            {user &&
-                <div>
-                    <img src={user.picture} alt="user avatar"></img>
-                    <small>Hello, {user.name}!</small>
-                </div>
-            }
-            {Object.keys(user).length !== 0 &&
-                <button onClick={onClick}>Sign Out</button>
-            }
-            <header>
+            < header >
                 <NavLink to={paths.main}>
                     <img src={logo} alt="logo" className={styles.header} />
                 </NavLink>
             </header>
-        </nav>
+        </nav >
     )
 }
 
