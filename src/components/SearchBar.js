@@ -1,4 +1,5 @@
 import { FaSistrix } from "react-icons/fa";
+import styles from "./SearchBar.module.css";
 
 const SearchBar = ({ onSearch }) => {
 
@@ -8,9 +9,9 @@ const SearchBar = ({ onSearch }) => {
     }
 
     return (
-        <div className="search-input-wrapper">
+        <div className={styles.search_input_wrapper}>
             <FaSistrix size={18} color="rgba(0, 0, 0, 0.54)" />
-            <input className="search-input" type="text" onChange={handleChange} placeholder="Filter by name..." />
+            <input className={styles.search_input} type="text" onChange={handleChange} placeholder="Filter by name..." />
         </div>
     )
 }

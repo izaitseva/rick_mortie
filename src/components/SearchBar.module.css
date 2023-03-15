@@ -1,0 +1,19 @@
+
+.search_input_wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px;
+    gap: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    max-width: 1020px;
+  }
+  
+  .search_input {
+    border: none;
+    width: 100%;
+    outline: none;
+    font-weight: 400;
+    font-size: 16px;
+  }
