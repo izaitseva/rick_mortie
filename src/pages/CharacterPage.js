@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { paths } from "../paths";
-import arrow_back from "../images/arrow_back.png"
+import arrow_back from "../images/arrow_back.svg"
 import { fetchCharacterById } from "../chatactersAPI";
 import styles from "./CharacterPage.module.css";
 
@@ -38,7 +38,8 @@ const CharacterPage = () => {
             {loading && <h2>Please wait...</h2>}
             <button className={styles.btn} onClick={handleClick}>
                 <img className={styles.btn_img} src={arrow_back} alt="arrow-back" />
-                Go back</button>
+                Go back
+            </button>
             {
                 <div className={styles.character_container}>
                     <img className={styles.character_avatar} src={character.image} alt="avatar" />
