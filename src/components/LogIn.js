@@ -39,7 +39,7 @@ export const LogIn = () => {
                     <h3>{user.name}</h3>
                 </div>
             }
-            {Object.keys(user).length != 0 &&
+            {Object.keys(user).length !== 0 &&
                 <div>
                     <button className={styles.signOut_btn} onClick={(e) => handleSignOut(e)}>Sign Out</button>
                 </div>
