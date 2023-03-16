@@ -1,6 +1,9 @@
-.header {
+.header_container {
+    padding-top: 86px;
+}
+
+.header_img {
     display: block;
     margin: auto;
-    margin-top: 86px;
     margin-bottom: 16px;
 }

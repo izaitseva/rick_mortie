@@ -1,0 +1,40 @@
+.signIn_container {
+    display: flex;
+    align-items: center;
+    right: 0;
+    top: 21px;
+    position: absolute;
+}
+
+.user_pic {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.user_pic:disabled {
+    opacity: 0;
+}
+
+.user_info {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.signOut_btn {
+    margin-left: 10px;
+    background: transparent;
+    cursor: pointer;
+
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    padding: 12px;
+    width: 80px;
+}
+
+.signOut_btn:hover {
+    background: lightgray;
+    color: white;
+    transition: all ease 0.5s;
+}
