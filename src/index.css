@@ -16,8 +16,20 @@
 
 @media (max-width: 414px) {
   .container {
-    width: 312px;
+    max-width: 312px;
+  }
+}
+
+@media (min-width: 415px) and (max-width: 650px) {
+  .container {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 651px) and (max-width: 1000px) {
+  .container {
     margin: auto;
+    max-width: 760px;
   }
 }
 

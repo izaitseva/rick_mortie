@@ -16,3 +16,16 @@
         width: 312px;
     }
 }
+
+@media (min-width: 415px) and (max-width: 650px) {
+    .header_img {
+      max-width: 500px;
+    }
+  }
+  
+  @media (min-width: 651px) and (max-width: 1000px) {
+    .header_img {
+      max-width: 760px;
+    }
+  }
+  
