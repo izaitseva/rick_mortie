@@ -1,9 +1,18 @@
 .header_container {
     padding-top: 86px;
+    width: 100%;
+    margin: auto;
 }
 
 .header_img {
     display: block;
     margin: auto;
     margin-bottom: 16px;
+}
+
+@media (max-width: 414px) {
+
+    .header_img {
+        width: 312px;
+    }
 }

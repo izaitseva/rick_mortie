@@ -1,9 +1,16 @@
 .signIn_container {
     display: flex;
     align-items: center;
-    right: 0;
-    top: 21px;
+    right: 50px;
     position: absolute;
+    top: 21px;
+}
+
+@media (max-width: 414px) {
+    .signIn_container {
+        top: 23px;
+        right: 15px;
+    }
 }
 
 .user_pic {
@@ -14,6 +21,12 @@
 
 .user_pic:disabled {
     opacity: 0;
+}
+
+@media (max-width: 414px) {
+    .user_name {
+        display: none;
+    }
 }
 
 .user_info {
@@ -33,8 +46,31 @@
     width: 80px;
 }
 
+@media (max-width: 414px) {
+    .signOut_btn {
+       width: 60px;
+       padding: 4px;
+       margin-left: 5px;
+    }
+}
+
 .signOut_btn:hover {
     background: lightgray;
     color: white;
     transition: all ease 0.5s;
+}
+
+.signOut_container {
+    top: 10px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+@media (max-width: 414px) {
+    .signOut_container {
+       right: 0;
+       top: 0;
+    }
 }

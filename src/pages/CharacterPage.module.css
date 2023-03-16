@@ -20,12 +20,16 @@
       border: none;
       display: flex;
       align-items: center;
-      margin-top: 21px;
-      margin-left: 50px;
       cursor: pointer;
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 21px;
+      left: 50px;
+  }
+
+  @media (max-width: 414px) {
+      .btn {
+          left: 0;
+      }
   }
 
   .btn_img {
@@ -41,6 +45,14 @@
       margin: auto;
   }
 
+  @media (max-width: 414px) {
+      .character_avatar {
+          margin-top: 124px;
+          width: 150px;
+          height: 148px;
+      }
+  }
+
   .character_title {
       font-weight: 400;
       font-size: 48px;
@@ -49,11 +61,19 @@
       text-align: center;
       justify-content: center;
       text-align: center;
+      margin-top: 16px;
+  }
+
+  @media (max-width: 414px) {
+      .character_title {
+          font-size: 32px;
+          line-height: 38px;
+          margin-top: 34px;
+      }
   }
 
   .character_info {
       margin-top: 48px;
-      margin-bottom: 48px;
       font-weight: 500;
       font-size: 20px;
       line-height: 24px;
@@ -66,23 +86,43 @@
       color: #8E8E93;
   }
 
+  @media (max-width: 414px) {
+      .character_info {
+          margin-top: 35px;
+          margin-bottom: 16px;
+          line-height: 38px;
+          justify-content: left;
+      }
+  }
+
   .character_info_list {
       list-style: none;
-
-      display: flex;
-      flex-direction: column;
-      padding: 0px;
+      margin-top: 48px;
+      padding-left: 0;
   }
+
+
+  @media (max-width: 414px) {
+    .character_info_list {
+        margin-top: 25px;
+    }
+}
 
   .character_info_listItem {
       border-bottom: 1px solid #E5E5E5;
+  }
+
+
+  @media (max-width: 414px) {
+      .character_info_listItem {
+          margin-left: 16px;
+      }
   }
 
   .character_info_title {
       font-style: normal;
       font-weight: 700;
       font-size: 16px;
-      line-height: 24px;
       letter-spacing: 0.15px;
       color: #081F32;
 
@@ -91,7 +131,13 @@
   .character_info_desc {
       font-weight: 400;
       font-size: 14px;
-      line-height: 20px;
       letter-spacing: 0.25px;
       color: #6E798C;
+  }
+
+  @media (max-width: 414px) {
+      .character_info_desc {
+          /* line-height: 2px; */
+          padding-bottom: 11px;
+      }
   }

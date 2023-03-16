@@ -1,6 +1,6 @@
 import { generatePath, NavLink, useLocation } from "react-router-dom";
 import { paths } from "../paths";
-import styles from "./CharacteCard.module.css";
+import styles from "./CharacterCard.module.css";
 
 const CharacterCard = ({ characters }) => {
 

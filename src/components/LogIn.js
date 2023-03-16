@@ -24,26 +24,47 @@ export const LogIn = () => {
             callback: handleCallbackResponse
         })
 
-        google.accounts.id.renderButton(
-            document.getElementById("signInDiv"),
-            { theme: "outline", size: "large" }
-        )
+        // google.accounts.id.renderButton(
+        //     document.getElementById("signInDiv"),
+        //     { theme: "outline", size: "large" }
+        // )
         google.accounts.id.prompt();
+
+        const resizeButton = () => {
+            const width = window.innerWidth;
+            const button = document.getElementById("signInDiv");
+            if (width <= 414) {
+                google.accounts.id.renderButton(button, { theme: "outline", size: "small" });
+            } else {
+                google.accounts.id.renderButton(button, { theme: "outline", size: "large" });
+            }
+        };
+
+        resizeButton();
+
+        window.addEventListener("resize", resizeButton);
+
+        return () => {
+            window.removeEventListener("resize", resizeButton);
+        };
     }, []);
+
 
     return (
         <div className={styles.signIn_container}>
-            {user &&
-                <div className={styles.user_info}>
-                    <img id="user-image" className={styles.user_pic} src={user.picture} alt="hey"></img>
-                    <h3>{user.name}</h3>
-                </div>
-            }
-            {Object.keys(user).length !== 0 &&
-                <div>
-                    <button className={styles.signOut_btn} onClick={(e) => handleSignOut(e)}>Sign Out</button>
-                </div>
-            }
+            <div className={styles.signOut_container}>
+                {user &&
+                    <div className={styles.user_info}>
+                        <img id="user-image" className={styles.user_pic} src={user.picture} alt="user pic"></img>
+                        <h3 className={styles.user_name}>{user.name}</h3>
+                    </div>
+                }
+                {Object.keys(user).length !== 0 &&
+                    <div>
+                        <button className={styles.signOut_btn} onClick={(e) => handleSignOut(e)}>Sign Out</button>
+                    </div>
+                }
+            </div>
             <div className={styles.signIn_btn} id="signInDiv"></div>
         </div>
     )

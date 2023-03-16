@@ -14,6 +14,13 @@
   position: relative;
 }
 
+@media (max-width: 414px) {
+  .container {
+    width: 312px;
+    margin: auto;
+  }
+}
+
 * {
   box-sizing: border-box;
   font-family: roboto;
