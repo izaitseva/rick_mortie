@@ -8,6 +8,12 @@
       padding-top: 76px;
   }
 
+  @media (max-width: 414px) {
+    .character_container {
+        padding-top: 124px;
+    }
+}
+
   .btn {
       font-family: 'Karla', roboto;
       font-style: normal;
@@ -29,6 +35,7 @@
   @media (max-width: 414px) {
       .btn {
           left: 0;
+          z-index: 9;
       }
   }
 
@@ -47,7 +54,6 @@
 
   @media (max-width: 414px) {
       .character_avatar {
-          margin-top: 124px;
           width: 150px;
           height: 148px;
       }

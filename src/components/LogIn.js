@@ -6,17 +6,19 @@ export const LogIn = () => {
     const [user, setUser] = useState("");
 
     function handleCallbackResponse(response) {
-        console.log("check:" + response.credential);
         var userObject = jwt_decode(response.credential);
         setUser(userObject);
         document.getElementById("signInDiv").hidden = true;
+        localStorage.setItem("authCredentials", response.credential);
     }
 
     function handleSignOut(event) {
         setUser({});
         document.getElementById("signInDiv").hidden = false;
         document.getElementById("user-image").hidden = true;
+        localStorage.removeItem("authCredentials");
     }
+    
     useEffect(() => {
         /* global google */
         google.accounts.id.initialize({
@@ -24,11 +26,14 @@ export const LogIn = () => {
             callback: handleCallbackResponse
         })
 
-        // google.accounts.id.renderButton(
-        //     document.getElementById("signInDiv"),
-        //     { theme: "outline", size: "large" }
-        // )
-        google.accounts.id.prompt();
+        const storedCredentials = localStorage.getItem("authCredentials");
+        if (storedCredentials) {
+            const userObject = jwt_decode(storedCredentials);
+            setUser(userObject);
+            document.getElementById("signInDiv").hidden = true;
+        } else {
+            google.accounts.id.prompt();
+        }
 
         const resizeButton = () => {
             const width = window.innerWidth;
@@ -49,7 +54,6 @@ export const LogIn = () => {
         };
     }, []);
 
-
     return (
         <div className={styles.signIn_container}>
             <div className={styles.signOut_container}>
@@ -68,4 +72,18 @@ export const LogIn = () => {
             <div className={styles.signIn_btn} id="signInDiv"></div>
         </div>
     )
+    // const clientId = "959854331354-telh3suplfm57nlldk6r9u4stpj3chq5.apps.googleusercontent.com"
+
+    // return (
+    //     < GoogleOAuthProvider clientId={clientId} >
+    //         <GoogleLogin
+    //             onSuccess={credentialResponse => {
+    //                 console.log(credentialResponse);
+    //             }}
+    //             onError={() => {
+    //                 console.log('Login Failed');
+    //             }}
+    //         />
+    //     </GoogleOAuthProvider>
+    // )
 }
