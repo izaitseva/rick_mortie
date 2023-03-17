@@ -11,14 +11,20 @@ const Characters = () => {
     const [characters, setCharacters] = useState([]);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [searchValue, setSearchValue] = useState("");
 
     useEffect(() => {
 
         const getCharacters = async () => {
             try {
                 setLoading(true);
-                const { data } = await fetchCharacters(searchParams.get('name'));
+                const nameParam = searchParams.get('name');
+                setSearchValue(nameParam);
+
+                const { data } = await fetchCharacters(nameParam);
+                
                 setCharacters(data.results);
+                setError(false);
             } catch {
                 setError(true);
             } finally {
@@ -38,13 +44,19 @@ const Characters = () => {
 
     return (
         <div>
-            <SearchBar onSearch={onSubmit} />
-            {error && <p>Oh crap!</p>}
-            {loading && <h2>I'm trying, wait...</h2>}
-            {<ul className={styles.list}>
-                <CharacterCard characters={sortCharacters(characters)} />
-            </ul>}
-        </div >
+            <SearchBar onSearch={onSubmit} search={searchValue}/>
+            {loading && <h2>Wubba Lubba Dub-Dub</h2>}
+            {error
+                ? (
+                    <p>I’m sorry, but your <span className={styles.search_value}>{searchParams.get("name")} </span>means very little to me.</p>
+                ) : characters.length ? (
+                    <ul className={styles.list}>
+                        <CharacterCard characters={sortCharacters(characters)} />
+                    </ul>
+                ) : (
+                    <p>No characters found.</p>
+                )}
+        </div>
     )
 }
 

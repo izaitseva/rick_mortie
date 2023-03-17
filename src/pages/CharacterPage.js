@@ -35,7 +35,7 @@ const CharacterPage = () => {
     return (
         <div>
             {error && <h2>There's nothing to see here</h2>}
-            {loading && <h2>Please wait...</h2>}
+            {loading && <h2>Wubba Lubba Dub-Dub</h2>}
             <button className={styles.btn} onClick={handleClick}>
                 <img className={styles.btn_img} src={arrow_back} alt="arrow-back" />
                 Go back
