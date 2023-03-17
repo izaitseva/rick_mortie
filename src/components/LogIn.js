@@ -18,7 +18,7 @@ export const LogIn = () => {
         document.getElementById("user-image").hidden = true;
         localStorage.removeItem("authCredentials");
     }
-    
+
     useEffect(() => {
         /* global google */
         google.accounts.id.initialize({
@@ -72,18 +72,4 @@ export const LogIn = () => {
             <div className={styles.signIn_btn} id="signInDiv"></div>
         </div>
     )
-    // const clientId = "959854331354-telh3suplfm57nlldk6r9u4stpj3chq5.apps.googleusercontent.com"
-
-    // return (
-    //     < GoogleOAuthProvider clientId={clientId} >
-    //         <GoogleLogin
-    //             onSuccess={credentialResponse => {
-    //                 console.log(credentialResponse);
-    //             }}
-    //             onError={() => {
-    //                 console.log('Login Failed');
-    //             }}
-    //         />
-    //     </GoogleOAuthProvider>
-    // )
 }
