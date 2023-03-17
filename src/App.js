@@ -15,8 +15,8 @@ function App() {
         <Route index element={<Main />} />
         <Route path={paths.characters} element={<Characters />} />
         <Route path={paths.characterPage} element={<CharacterPage />} />
-        <Route path="*" element={<NotFound />} />
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes >
   );
 }

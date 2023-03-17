@@ -1,9 +1,14 @@
+.notFound_container {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
 .gohome_btn {
     text-decoration: none;
-    background-color: lightgrey;
-    cursor: pointer;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-    padding: 12px;
-    width: 80px;
+    color: green;
+}
+
+.notFound_pic {
+    width: 100%;
 }
