@@ -13,7 +13,6 @@ const CharacterPage = () => {
     const [error, setError] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
-
     const linkBack = location?.state?.from ?? paths.main;
     const handleClick = () => navigate(linkBack);
 
